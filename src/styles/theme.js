@@ -1,7 +1,8 @@
 const Theme = {
-  corPrincipal: '#6c5ce7',
-  corSecondary: '#2d3436;',
-  corLinkHover: '#55efc4;',
+  primaryColor: '#6c5ce7',
+  secondaryColor: '#2d3436;',
+  linkHoverColor: '#55efc4;',
+  cardBg: '#fcfcfc;',
 };
 
 export default Theme;

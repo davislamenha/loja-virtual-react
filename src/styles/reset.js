@@ -15,6 +15,11 @@ font-family: sans-serif;
   a {
 text-decoration: none;
   }
+
+button {
+  cursor: pointer;
+ border: none;
+}
 `;
 
 export default ResetStyles;
