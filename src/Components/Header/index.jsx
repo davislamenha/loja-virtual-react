@@ -11,7 +11,9 @@ const Header = () => {
               <a href="#">Produtos</a>
             </li>
             <li>
-              <a href="#">Carrinho</a>
+              <a className="cart" href="#">
+                Carrinho
+              </a>
             </li>
           </ul>
         </nav>
