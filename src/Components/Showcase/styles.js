@@ -1,6 +1,13 @@
 import styled from 'styled-components';
 
-const ProductStyles = styled.li`
+const ShowcaseStyles = styled.ul`
+  padding: 0 0 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+`;
+
+export const ProductStyles = styled.li`
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.cardBg};
@@ -37,4 +44,4 @@ const ProductStyles = styled.li`
   }
 `;
 
-export default ProductStyles;
+export default ShowcaseStyles;

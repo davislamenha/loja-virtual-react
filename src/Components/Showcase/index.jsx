@@ -1,13 +1,14 @@
+import ShowcaseStyles, { ProductStyles } from './styles';
+
 import products from '../../services/products';
 import Title from '../Title';
 import livro_1 from '../../assets/livro_1.jpg';
 import livro_2 from '../../assets/livro_2.jpg';
-import ProductStyles from './styles';
 import { addProduct } from '../../services/Cart';
 
-const Products = () => {
+const Showcase = () => {
   return (
-    <>
+    <ShowcaseStyles>
       {products.map((product) => {
         const { id, name, description, price } = product;
         return (
@@ -24,8 +25,8 @@ const Products = () => {
           </ProductStyles>
         );
       })}
-    </>
+    </ShowcaseStyles>
   );
 };
 
-export default Products;
+export default Showcase;
