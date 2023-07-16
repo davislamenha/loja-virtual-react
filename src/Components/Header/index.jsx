@@ -1,5 +1,6 @@
 import HeaderStyle, { HeaderContainer } from './styles';
 import { ShoppingCart } from '@phosphor-icons/react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -9,12 +10,12 @@ const Header = () => {
         <nav>
           <ul>
             <li>
-              <a href="#">Produtos</a>
+              <Link to="/">Início</Link>
             </li>
             <li>
-              <a className="cart" href="#">
+              <Link to="/carrinho" className="cart" href="#">
                 <ShoppingCart size={28} />
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
