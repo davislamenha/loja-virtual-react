@@ -11,6 +11,7 @@ export const FooterContainer = styled(Container)`
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: initial;
 `;
 
 export default FooterStyle;
