@@ -1,4 +1,5 @@
 import HeaderStyle, { HeaderContainer } from './styles';
+import { ShoppingCart } from '@phosphor-icons/react';
 
 const Header = () => {
   return (
@@ -12,7 +13,7 @@ const Header = () => {
             </li>
             <li>
               <a className="cart" href="#">
-                Carrinho
+                <ShoppingCart size={28} />
               </a>
             </li>
           </ul>
