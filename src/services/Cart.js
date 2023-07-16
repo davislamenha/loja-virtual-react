@@ -1,14 +1,17 @@
-function getProductsInCart() {
+function getProductsInLocalStorage() {
   return JSON.parse(localStorage.getItem('cart') || '[]');
 }
 
-function addProduct(product) {
-  const productsInCart = getProductsInCart();
-  addQuantity(product, productsInCart);
-  localStorage.setItem('cart', JSON.stringify(productsInCart));
+function setProductsInLocalStorage(cart) {
+  localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-function addQuantity(product, productsInCart) {
+function addProduct(product) {
+  setProductsInLocalStorage(addQuantity(product));
+}
+
+function addQuantity(product) {
+  const productsInCart = getProductsInLocalStorage();
   const productAlreadyExist = productsInCart.find((p) => p.id === product.id);
   if (productAlreadyExist) {
     productAlreadyExist.quantity += 1;
@@ -16,6 +19,22 @@ function addQuantity(product, productsInCart) {
     product.quantity = 1;
     productsInCart.push(product);
   }
+  return productsInCart;
 }
 
-export { addProduct };
+function calculateTotal(cart) {
+  const productsInCart = cart;
+  const total = productsInCart.reduce((acum, atual) => {
+    const { quantity, price } = atual;
+    const productTotalPrice = quantity * price;
+    return (acum += productTotalPrice);
+  }, 0);
+  return total;
+}
+
+export {
+  addProduct,
+  getProductsInLocalStorage,
+  setProductsInLocalStorage,
+  calculateTotal,
+};
