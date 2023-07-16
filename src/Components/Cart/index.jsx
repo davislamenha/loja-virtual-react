@@ -59,23 +59,25 @@ const CartComponent = () => {
                   <h3>{name}</h3>
                   <p>{description}</p>
                 </div>
-                <div className="price">
-                  <span>R$ {price}</span>
-                </div>
-                <div className="quantity">
-                  <input
-                    type="number"
-                    value={quantity}
-                    onChange={(e) =>
-                      updateQuantity(id, parseInt(e.target.value))
-                    }
-                  />
-                </div>
-                <div className="actions">
-                  <button onClick={() => removeProduct(id)}>
-                    <Trash size={32} />
-                  </button>
-                </div>
+                <form className="product_form">
+                  <div className="price">
+                    <span>R$ {price}</span>
+                  </div>
+                  <div className="quantity">
+                    <input
+                      type="number"
+                      value={quantity}
+                      onChange={(e) =>
+                        updateQuantity(id, parseInt(e.target.value))
+                      }
+                    />
+                  </div>
+                  <div className="actions">
+                    <button onClick={() => removeProduct(id)}>
+                      <Trash size={32} />
+                    </button>
+                  </div>
+                </form>
               </ProductStyles>
             );
           })

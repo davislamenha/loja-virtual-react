@@ -12,6 +12,7 @@ export const FooterContainer = styled(Container)`
   align-items: center;
   justify-content: center;
   min-height: initial;
+  text-align: center;
 `;
 
 export default FooterStyle;
