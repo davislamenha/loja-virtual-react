@@ -1,20 +1,23 @@
 import styled from 'styled-components';
 
-const TitleStyles = styled.h2`
+const TitleH2 = styled.h2`
   color: ${({ theme }) => theme.secondaryColor};
-  text-align: ${({ fontSize }) => (fontSize === 'g' ? 'center' : 'left')};
-  font-size: ${({ fontSize }) => {
-    switch (fontSize) {
-      case 'g':
-        return (fontSize = '48px');
+  text-align: center;
+  font-size: 48px;
 
-      case 'm':
-        return (fontSize = '32px');
-
-      case 'p':
-        return (fontSize = '20px');
-    }
-  }};
+  @media (max-width: 767px) {
+    font-size: 32px;
+  }
 `;
 
-export default TitleStyles;
+const TitleH3 = styled.h3`
+  color: ${({ theme }) => theme.secondaryColor};
+  text-align: left;
+  font-size: 20px;
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
+`;
+
+export { TitleH2, TitleH3 };

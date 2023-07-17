@@ -1,12 +1,16 @@
 import PropTypes from 'prop-types';
-import TitleStyles from './styles';
+import { TitleH2, TitleH3 } from './styles';
 
-const Title = ({ children, fontSize }) => {
-  return <TitleStyles fontSize={fontSize}>{children}</TitleStyles>;
+const Title = ({ children, size }) => {
+  return size === 'big' ? (
+    <TitleH2>{children}</TitleH2>
+  ) : (
+    <TitleH3>{children}</TitleH3>
+  );
 };
 
 Title.propTypes = {
-  fontSize: PropTypes.string.isRequired,
+  size: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired,
 };
 

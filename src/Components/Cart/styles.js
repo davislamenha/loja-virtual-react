@@ -30,7 +30,8 @@ export const ProductStyles = styled.div`
   .product_form {
     display: flex;
     align-items: center;
-    margin: auto;
+    width: 100%;
+    justify-content: space-between;
   }
 
   .details {
@@ -40,7 +41,7 @@ export const ProductStyles = styled.div`
   .price {
     padding: 0 12px;
     display: block;
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .quantity {
@@ -71,17 +72,18 @@ export const ProductStyles = styled.div`
 
   @media (max-width: 767px) {
     grid-template-columns: 250px 4fr;
+
+    .price,
+    .quantity,
+    .actions button {
+      padding: 0;
+    }
   }
 
   @media (max-width: 560px) {
     padding-bottom: 20px;
     display: flex;
     flex-direction: column;
-
-    .product_form {
-      width: 100%;
-      justify-content: space-between;
-    }
   }
 `;
 

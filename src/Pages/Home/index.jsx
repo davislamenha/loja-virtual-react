@@ -9,7 +9,7 @@ const Home = () => {
     <>
       <Header />
       <Container>
-        <Title fontSize="g">Nossos Produtos</Title>
+        <Title size="big">Nossos Produtos</Title>
         <Showcase />
       </Container>
       <Footer />

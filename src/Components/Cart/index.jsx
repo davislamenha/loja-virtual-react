@@ -8,6 +8,7 @@ import {
   setProductsInLocalStorage,
 } from '../../services/Cart';
 import { useEffect, useState } from 'react';
+import Title from '../Title';
 
 const CartComponent = () => {
   const [cart, setCart] = useState([]);
@@ -56,7 +57,7 @@ const CartComponent = () => {
                   alt={`Livro ${name}`}
                 />
                 <div className="details">
-                  <h3>{name}</h3>
+                  <Title>{name}</Title>
                   <p>{description}</p>
                 </div>
                 <form className="product_form">

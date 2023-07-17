@@ -9,7 +9,7 @@ const Cart = () => {
     <>
       <Header />
       <Container>
-        <Title fontSize="g">Meu Carrinho</Title>
+        <Title size="big">Meu Carrinho</Title>
         <CartComponent />
       </Container>
       <Footer />

@@ -15,7 +15,7 @@ const Showcase = () => {
           <ProductStyles key={id}>
             <img src={id % 2 === 0 ? livro_2 : livro_1} alt={`Livro ${name}`} />
             <div className="details">
-              <Title fontSize="p">{name}</Title>
+              <Title>{name}</Title>
               <p>{description}</p>
             </div>
             <span className="price">R$ {price}</span>
