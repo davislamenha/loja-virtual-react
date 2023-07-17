@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <HeaderStyle>
       <HeaderContainer>
-        <h1>Logo</h1>
+        <h1>MyShop</h1>
         <nav>
           <ul>
             <li>
