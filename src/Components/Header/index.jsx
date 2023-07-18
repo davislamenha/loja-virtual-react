@@ -1,26 +1,26 @@
-import HeaderStyle, { HeaderContainer } from './styles';
+import * as S from './styles';
 import { ShoppingCart } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <HeaderStyle>
-      <HeaderContainer>
-        <h1>MyShop</h1>
+    <S.Header>
+      <S.HeaderContainer>
+        <S.Logo>MyShop</S.Logo>
         <nav>
-          <ul>
-            <li>
+          <S.MenuList>
+            <S.MenuItem>
               <Link to="/">Início</Link>
-            </li>
-            <li>
+            </S.MenuItem>
+            <S.MenuItem>
               <Link to="/carrinho" className="cart" href="#">
                 <ShoppingCart size={28} />
               </Link>
-            </li>
-          </ul>
+            </S.MenuItem>
+          </S.MenuList>
         </nav>
-      </HeaderContainer>
-    </HeaderStyle>
+      </S.HeaderContainer>
+    </S.Header>
   );
 };
 

@@ -1,36 +1,36 @@
 import styled from 'styled-components';
 import { Container } from '../../styles/global';
 
-const HeaderStyle = styled.header`
+const Header = styled.header`
   background-color: ${(props) => props.theme.primaryColor};
+`;
 
-  h1 {
+const Logo = styled.h1`
+  color: ${(props) => props.theme.secondaryColor};
+`;
+
+const MenuList = styled.ul`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+`;
+
+const MenuItem = styled.li`
+  a {
     color: ${(props) => props.theme.secondaryColor};
-  }
+    transition: color, 0.3s all;
 
-  nav {
-    ul {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-
-      li a {
-        color: ${(props) => props.theme.secondaryColor};
-        transition: color, 0.3s all;
-
-        &:hover {
-          color: ${(props) => props.theme.linkHoverColor};
-        }
-      }
+    &:hover {
+      color: ${(props) => props.theme.linkHoverColor};
     }
   }
 `;
 
-export const HeaderContainer = styled(Container)`
+const HeaderContainer = styled(Container)`
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: initial;
 `;
 
-export default HeaderStyle;
+export { HeaderContainer, Header, Logo, MenuList, MenuItem };
