@@ -1,5 +1,4 @@
-import ShowcaseStyles, { ProductStyles } from './styles';
-
+import * as S from './styles';
 import products from '../../services/products';
 import Title from '../Title';
 import livro_1 from '../../assets/livro_1.jpg';
@@ -8,24 +7,27 @@ import { addProduct } from '../../services/Cart';
 
 const Showcase = () => {
   return (
-    <ShowcaseStyles>
+    <S.Showcase>
       {products.map((product) => {
         const { id, name, description, price } = product;
         return (
-          <ProductStyles key={id}>
-            <img src={id % 2 === 0 ? livro_2 : livro_1} alt={`Livro ${name}`} />
-            <div className="details">
+          <S.Product key={id}>
+            <S.ProductImage
+              src={id % 2 === 0 ? livro_2 : livro_1}
+              alt={`Livro ${name}`}
+            />
+            <S.ProductDetails>
               <Title>{name}</Title>
               <p>{description}</p>
-            </div>
-            <span className="price">R$ {price}</span>
-            <button onClick={() => addProduct(product)} className="addbtn">
+            </S.ProductDetails>
+            <S.ProductPrice>R$ {price}</S.ProductPrice>
+            <S.ProductButton onClick={() => addProduct(product)}>
               Adicionar Ao Carrinho
-            </button>
-          </ProductStyles>
+            </S.ProductButton>
+          </S.Product>
         );
       })}
-    </ShowcaseStyles>
+    </S.Showcase>
   );
 };
 
