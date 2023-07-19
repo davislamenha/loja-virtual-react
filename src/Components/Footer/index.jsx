@@ -1,12 +1,12 @@
-import FooterStyle, { FooterContainer } from './styles';
+import * as S from './styles';
 
 const Footer = () => {
   return (
-    <FooterStyle>
-      <FooterContainer>
+    <S.Footer>
+      <S.FooterContainer>
         <p>Davis Lamenha Sampaio. Alguns direitos reservados.</p>
-      </FooterContainer>
-    </FooterStyle>
+      </S.FooterContainer>
+    </S.Footer>
   );
 };
 
