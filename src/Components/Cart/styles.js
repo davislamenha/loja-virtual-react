@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const CartStyles = styled.div`
+const Cart = styled.div`
   padding: 0 0 40px;
   display: flex;
   flex-direction: column;
@@ -10,7 +10,7 @@ const CartStyles = styled.div`
   }
 `;
 
-export const ProductStyles = styled.div`
+const Product = styled.div`
   color: ${({ theme }) => theme.secondaryColor};
   display: grid;
   grid-template-columns: 250px 4fr auto;
@@ -20,23 +20,33 @@ export const ProductStyles = styled.div`
   border-top: ${({ theme }) => theme.primaryColor} solid 1px;
   transition: heigth, 0.5s ease;
 
-  img {
-    display: block;
-    max-width: 100%;
-    border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  @media (max-width: 767px) {
+    grid-template-columns: 250px 4fr;
   }
 
-  .product_form {
+  @media (max-width: 560px) {
+    padding-bottom: 20px;
     display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
+    flex-direction: column;
   }
+`;
 
-  .details {
-    align-self: start;
-  }
+const ProductImage = styled.img`
+  display: block;
+  max-width: 100%;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+`;
+
+const ProductDetails = styled.div`
+  align-self: start;
+`;
+
+const ProductForm = styled.form`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
 
   .price {
     padding: 0 12px;
@@ -48,12 +58,17 @@ export const ProductStyles = styled.div`
     padding: 0 12px;
     input {
       border: ${({ theme }) => theme.primaryColor} solid 1px;
-
       border-radius: 4px;
       width: 50px;
       padding: 8px;
       font-size: 16px;
       text-align: center;
+      transition: 0.3s all;
+
+      &:focus {
+        outline: none;
+        border-color: ${({ theme }) => theme.secondaryColor};
+      }
     }
   }
 
@@ -71,47 +86,42 @@ export const ProductStyles = styled.div`
   }
 
   @media (max-width: 767px) {
-    grid-template-columns: 250px 4fr;
-
     .price,
     .quantity,
     .actions button {
       padding: 0;
     }
   }
-
-  @media (max-width: 560px) {
-    padding-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-  }
 `;
 
-export const Total = styled.div`
+const Total = styled.div`
+  background-color: ${({ theme }) => theme.primaryColor};
   color: ${({ theme }) => theme.secondaryColor};
-  padding: 12px 0;
-  text-align: right;
+  padding: 12px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 20px;
 
-  .text {
-    font-size: 20px;
-    font-weight: bold;
+  .basket {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 28px;
   }
   .display {
-    margin-top: 4px;
-    display: block;
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 28px;
   }
 
   @media (max-width: 560px) {
-    padding: 0;
-    .text {
-      font-size: 16px;
-    }
-    .display {
+    padding: 8px;
+    justify-content: space-between;
+    .display,
+    .basket {
       font-size: 24px;
     }
   }
 `;
 
-export default CartStyles;
+export { Cart, Product, ProductDetails, ProductForm, ProductImage, Total };

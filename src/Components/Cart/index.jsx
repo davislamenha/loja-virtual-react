@@ -1,5 +1,5 @@
-import CartStyles, { ProductStyles, Total } from './styles';
-import { Trash } from '@phosphor-icons/react';
+import * as S from './styles';
+import { Trash, Basket } from '@phosphor-icons/react';
 import livro_1 from '../../assets/livro_1.jpg';
 import livro_2 from '../../assets/livro_2.jpg';
 import {
@@ -45,22 +45,22 @@ const CartComponent = () => {
   };
 
   return (
-    <CartStyles>
+    <S.Cart>
       {cart
         ? cart.map((product) => {
             const { id, name, description, price, quantity } = product;
 
             return (
-              <ProductStyles key={id} id={id}>
-                <img
+              <S.Product key={id} id={id}>
+                <S.ProductImage
                   src={id % 2 === 0 ? livro_2 : livro_1}
                   alt={`Livro ${name}`}
                 />
-                <div className="details">
+                <S.ProductDetails>
                   <Title>{name}</Title>
                   <p>{description}</p>
-                </div>
-                <form className="product_form">
+                </S.ProductDetails>
+                <S.ProductForm>
                   <div className="price">
                     <span>R$ {price}</span>
                   </div>
@@ -78,16 +78,19 @@ const CartComponent = () => {
                       <Trash size={32} />
                     </button>
                   </div>
-                </form>
-              </ProductStyles>
+                </S.ProductForm>
+              </S.Product>
             );
           })
         : 'Nenhum produto foi adicionado ao carrinho.'}
-      <Total>
-        <span className="text">Total:</span>
-        <span className="display">R$ {total}</span>
-      </Total>
-    </CartStyles>
+      <S.Total>
+        <span className="basket">
+          <Basket size={32} />
+          {cart.length}
+        </span>
+        <span className="display">Total: R$ {total}</span>
+      </S.Total>
+    </S.Cart>
   );
 };
 
